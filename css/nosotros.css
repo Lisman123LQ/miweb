@@ -1,0 +1,273 @@
+:root {
+    --primary-color: #1a4e8c;
+    --secondary-color: #e9b14c;
+    --accent-color: #c83232;
+    --light-color: #f5f5f5;
+    --dark-color: #333;
+    --gray-color: #eaeaea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.contenedor {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.logo-texto h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.logo-texto p {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.contacto-info {
+    font-size: 0.9rem;
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--secondary-color);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover, .menu a.activo {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main {
+    grid-area: main;
+    padding: 2rem;
+    background-color: white;
+}
+
+.portada {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.portada h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.portada img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contenido-sobre {
+    display: grid;
+    grid-template-areas:
+        "historia historia"
+        "mision-vision mision-vision";
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.historia {
+    grid-area: historia;
+}
+
+.historia h3, .mision-vision h3, .equipo h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.contenido-historia {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contenido-historia img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-historia .texto p {
+    margin-bottom: 1rem;
+}
+
+.mision-vision {
+    grid-area: mision-vision;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mision, .vision {
+    padding: 1.5rem;
+    background-color: var(--gray-color);
+    border-radius: 8px;
+    height: 100%;
+}
+
+.mision h3, .vision h3 {
+    border-bottom: none;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.equipo {
+    margin-top: 3rem;
+}
+
+.equipo-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.miembro-equipo {
+    background-color: var(--gray-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.miembro-equipo img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.miembro-equipo h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+}
+
+.pie-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.iconos-sociales {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.icono-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.derechos {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .contenido-historia {
+        grid-template-columns: 1fr;
+    }
+
+    .mision-vision {
+        grid-template-columns: 1fr;
+    }
+}
